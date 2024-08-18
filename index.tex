@@ -1,0 +1,305 @@
+%
+%Academic CV LaTeX Template
+% Author: Dubasi Pavan Kumar
+% LinkedIn: https://www.linkedin.com/in/im-pavankumar/
+% License: MIT
+%
+% For errors, suggestions, or improvements, please contact:
+% Email: pavankumard.pg19.ma@nitp.ac.in
+%
+
+
+
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{JAGRATI MEHTA}}
+\end{center}
+\vspace{-5mm}
+
+\begin{center}
+    \small{
+    +91-9929927111 | \href{jagratimehta410@gmail.com}{jagratimehta410@gmail.com} | 
+    \href{https://jagratimehta410.github.io/jag-portfolio/}{jag-portfolio.com}
+    }
+\end{center}
+\vspace{-7mm}
+\begin{center}
+    \small{
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/jagrati-mehta-4b87b7213/}{jagrati-mehta-4b87b7213} | 
+    \socialicon{\faGithub} \href{https://github.com/jagratimehta410/}{jagratimehta410} | 
+    }
+  \end{center}
+  \vspace{-7mm}
+    \begin{center}
+    \small{Chaumahla, Rajasthan - 326515, India}
+        \end{center}
+  \vspace{-6mm}
+\section{\textbf{Objective}}
+\vspace{-0.1mm}
+\small{
+Seeking a challenging position in software development to leverage my expertise in front-end technologies like HTML, CSS, JS, and Angular, as well as back-end development with Java, SpringBoot, and MySQL. Aiming to contribute to innovative projects at the intersection of user experience design and practical problem-solving in fields such as web development and enterprise application solutions. 
+}
+\vspace{-3mm}
+\section{\textbf{Internship}}
+\vspace{-0.4mm}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {{Glob Tech  Power Foundation }}{Remote {{}[\href{https://github.com/jagratimehta410/Glob-Tpf}{\textcolor{darkblue}{\faGithub}}]}}
+      {Java Full Stack Web Developer}{April 2024 - July 2024}  
+
+      \resumeItemListStart
+      \item Key Skills : Angular, Spring Boot, GitHub, Docker, HTML, Bootstrap, CSS, Netlify, git, Java ,Postman
+        \item During my internship at Glob Techpower Foundation, I successfully developed a live website for the NGO, highlighting their commitment to using technology for social impact. 
+      \resumeItemListEnd
+\vspace{-4mm}
+\section{\textbf{Education}}
+\vspace{-2mm}
+\resumeSubheading
+{Parul University}{Vadodara, Gujarat}
+{Masters in Computer Application}{September 2023 - August 2025}
+\resumeItemListStart
+\item CGPA: 9.38
+\resumeItemListEnd
+\resumeSubheading
+{Shri Vaishnav Institute of Management}{Indore, Madhya-Pradesh}
+{Bachelors in Computer Application}{August 2020 - March 2023}
+\resumeItemListStart
+\item CGPA: 8.43
+\resumeItemListEnd
+\resumeSubheading
+{Paramount Academy}{Sitamau, Madhya-Pradesh}
+{PCM (CBSE) }{March  2020}
+\resumeItemListStart
+\item CGPA : 7.41
+\resumeItemListEnd
+\vspace{-4mm}
+
+\section{\textbf{Projects}}
+\vspace{-2mm}
+\resumeProject
+  {Jag Portfolio}
+  {Tools: \textit{HTML, CSS, Javascript ,Bootstrap} }
+  {April  2024 - June 2024}
+  {{Jag-Portfolio}[\href{https://jagratimehta410.github.io/jag-portfolio/}{\textcolor{darkblue}{\faGithub}}]}
+  \resumeItemListStart
+   \item Description: 
+   Created a responsive personal portfolio website to showcase my projects, skills, and professional journey. The site offers easy navigation and serves as a central hub for showcasing my development expertise. 
+\resumeItemListEnd
+
+\resumeProject
+  {Java Grocery Shop}
+  {Tools: Java,eclipse}
+  {April 2024}
+  {{Grocery Shop}[\href{https://github.com/jagratimehta410/java-grocery-shop}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+  \item Description: java-grocery-shop| is a Java-based application designed to manage a grocery store. The project features separate functionalities for shopkeepers and customers, allowing for efficient management of inventory and transactions. 
+\resumeSubHeadingListEnd
+\vspace{-7.5mm}
+
+\section{\textbf{Skills}}
+\vspace{-0.4mm}
+\resumeHeadingSkillStart
+\resumeSubItem{Programming Languages:}
+    {JAVA (DSA) , JavaScript}
+\resumeSubItem{Web Technologies:}
+    {HTML, CSS, Angular, Bootstrap, RESTful APIs, Spring Boot}
+\resumeSubItem{Database Systems:}
+    {MySQL}
+\resumeSubItem{Cloud Technologies:}
+    {Netlify, GitHub Pages}
+\resumeSubItem{DevOps \& Version Control:}
+    {Git, GitHub, Docker}
+\resumeSubItem{Specialized Area:}
+    {Problem-Solving, Technical Documentation}
+\resumeHeadingSkillEnd
+\vspace{-3mm}
+
+\section{\textbf{Honors and Awards}}
+\vspace{-2mm}
+\resumeProject
+  {University Topper in MCA}
+  {Parul University}
+  {July 2024}
+  {{Certificate}[\href{https://www.linkedin.com/posts/jagrati-mehta-4b87b7213_chapter-semester-3rd-activity-7221510535148650496-eTXw?utm_source=share&utm_medium=member_desktop}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\resumeProject
+  {Anchored an international conference }
+  {Parul University}
+  { May 2024}
+  {{Certificate}[\href{https://www.linkedin.com/posts/jagrati-mehta-4b87b7213_gratitude-mentorship-education-activity-7179881136624463872-Kzdf?utm_source=share&utm_medium=member_desktop}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\vspace{-2mm}
+
+\section{\textbf{Certifications}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+\resumePOR{}{
+\textbf{Full Stack Web Development(SimpliLearn):} {{\href{https://www.linkedin.com/posts/jagrati-mehta-4b87b7213_jagrati-mehta-has-successfully-completed-activity-7184382491061874689-I0qa?utm_source=share&utm_medium=member_desktop}{Certificate}}}}{April 2024}
+\resumePOR{}{
+\textbf{Responsive Web Design(FreeCodeCamp):} {{\href{https://www.freecodecamp.org/certification/jagrati210/responsive-web-design}{Certificate}}}}{September 2023}
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Additional Information}}
+\vspace{-0.4mm}
+\small{
+\textbf{Languages:} English , Hindi 
+
+\textbf{Interests:} Reading , timely professional
+
+}
+\vspace{-4mm}
+
+
+
+
+\end{document}
