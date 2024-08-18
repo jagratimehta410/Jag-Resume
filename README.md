@@ -6,6 +6,10 @@ This repository contains the LaTeX source code for my resume, which is designed 
 
 This resume highlights my skills, experience, education, and portfolio projects in the field of software development. The resume is designed to be clear, concise, and visually appealing, focusing on key information that potential employers would find useful.
 
+## 👀 Download
+
+- <a href="https://drive.google.com/file/d/1meC-Hhnuybt-bXxUIg7CH8qSbeeykbgu/view?usp=sharing" target="_blank">Click to Download</a>
+
 ## 🌟 Features
 
 - **✨ Simple and Clean Design:** The resume is structured to present information in a clear and readable format.
